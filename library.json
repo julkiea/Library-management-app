@@ -1,0 +1,316 @@
+{
+  "spisCzytelnikow": [
+    {
+      "imi\u0119 czytelnika": "Marcin",
+      "nazwisko czytelnika": "Kwiatkowski",
+      "numer czytelnika": "2",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Liliana",
+      "nazwisko czytelnika": "Bassa",
+      "numer czytelnika": "3",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Marcin",
+      "nazwisko czytelnika": "Szwon",
+      "numer czytelnika": "4",
+      "wypozyczone ksiazki": [
+        {
+          "tytul": "Pan Mercedes",
+          "imie autora": "Stephen",
+          "nazwisko autora": "King",
+          "gatunek literacki": "thriller",
+          "status": "wypo\u017cyczona",
+          "isbn": "9781444788655"
+        }
+      ],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Anna",
+      "nazwisko czytelnika": "Zima",
+      "numer czytelnika": "5",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Andrzej",
+      "nazwisko czytelnika": "Kowalski",
+      "numer czytelnika": "6",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Adam",
+      "nazwisko czytelnika": "Bassa",
+      "numer czytelnika": "7",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Grzegorz",
+      "nazwisko czytelnika": "Kwiecie\u0144",
+      "numer czytelnika": "8",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Aniela",
+      "nazwisko czytelnika": "Kwiecie\u0144",
+      "numer czytelnika": "9",
+      "wypozyczone ksiazki": [
+        {
+          "tytul": "Miasto szk\u0142a",
+          "imie autora": "Cassandra",
+          "nazwisko autora": "Clare",
+          "gatunek literacki": "fantasy",
+          "status": "wypo\u017cyczona",
+          "isbn": "9781416972259"
+        }
+      ],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Agnieszka",
+      "nazwisko czytelnika": "Turek",
+      "numer czytelnika": "10",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Agnieszka",
+      "nazwisko czytelnika": "Maj",
+      "numer czytelnika": "11",
+      "wypozyczone ksiazki": [
+        {
+          "tytul": "Schronisko, kt\u00f3re przesta\u0142o istnie\u0107",
+          "imie autora": "S\u0142awomir",
+          "nazwisko autora": "Gortych",
+          "gatunek literacki": "krymina\u0142",
+          "status": "wypo\u017cyczona",
+          "isbn": "9788327162144"
+        },
+        {
+          "tytul": "Miasto ko\u015bci",
+          "imie autora": "Cassandra",
+          "nazwisko autora": "Clare",
+          "gatunek literacki": "fantasy",
+          "status": "wypo\u017cyczona",
+          "isbn": "9781416955078"
+        }
+      ],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Paulina",
+      "nazwisko czytelnika": "Bassa",
+      "numer czytelnika": "12",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": [
+        {
+          "tytul": "Zmierzch",
+          "imie autora": "Stephenie",
+          "nazwisko autora": "Meyer",
+          "gatunek literacki": "fantasy",
+          "status": "wypo\u017cyczona",
+          "isbn": "9788327166746"
+        }
+      ]
+    },
+    {
+      "imi\u0119 czytelnika": "Adam",
+      "nazwisko czytelnika": "Bassa",
+      "numer czytelnika": "13",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Katarzyna",
+      "nazwisko czytelnika": "Czerwiec",
+      "numer czytelnika": "14",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Katarzyna",
+      "nazwisko czytelnika": "Krawczyk",
+      "numer czytelnika": "15",
+      "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    }
+  ],
+  "biblioteka": [
+    {
+      "tytul": "Mistrz i Ma\u0142gorzata",
+      "imie autora": "Michai\u0142",
+      "nazwisko autora": "Bu\u0142hakow",
+      "gatunek literacki": "powie\u015b\u0107",
+      "status": "dost\u0119pna",
+      "isbn": "9788328714595"
+    },
+    {
+      "tytul": "Zaufaj mi",
+      "imie autora": "Anna",
+      "nazwisko autora": "Bellon",
+      "gatunek literacki": "powie\u015b\u0107",
+      "status": "dost\u0119pna",
+      "isbn": "9788324048526"
+    },
+    {
+      "tytul": "Ba\u015bniowa opowie\u015b\u0107",
+      "imie autora": "Stephen",
+      "nazwisko autora": "King",
+      "gatunek literacki": "fantasy",
+      "status": "dost\u0119pna",
+      "isbn": "9788367338189"
+    },
+    {
+      "tytul": "Pan Mercedes",
+      "imie autora": "Stephen",
+      "nazwisko autora": "King",
+      "gatunek literacki": "thriller",
+      "status": "wypo\u017cyczona",
+      "isbn": "9781444788655"
+    },
+    {
+      "tytul": "Nie zapomnij mnie",
+      "imie autora": "Anna",
+      "nazwisko autora": "Bellon",
+      "gatunek literacki": "powie\u015b\u0107 young adult",
+      "status": "dost\u0119pna",
+      "isbn": "9788324038213"
+    },
+    {
+      "tytul": "Zmierzch",
+      "imie autora": "Stephenie",
+      "nazwisko autora": "Meyer",
+      "gatunek literacki": "fantasy",
+      "status": "dost\u0119pna",
+      "isbn": "9788327166746"
+    },
+    {
+      "tytul": "Romeo i Julia",
+      "imie autora": "William",
+      "nazwisko autora": "Shakespeare",
+      "gatunek literacki": "utw\u00f3r dramatyczny",
+      "status": "wypo\u017cyczona",
+      "isbn": "9788382791112"
+    },
+    {
+      "tytul": "Miasto ko\u015bci",
+      "imie autora": "Cassandra",
+      "nazwisko autora": "Clare",
+      "gatunek literacki": "fantasy",
+      "status": "wypo\u017cyczona",
+      "isbn": "9781416955078"
+    },
+    {
+      "tytul": "Miasto upad\u0142ych anio\u0142\u00f3w",
+      "imie autora": "Cassandra",
+      "nazwisko autora": "Clare",
+      "gatunek literacki": "fantasy",
+      "status": "dost\u0119pna",
+      "isbn": "9781406328677"
+    },
+    {
+      "tytul": "Miasto szk\u0142a",
+      "imie autora": "Cassandra",
+      "nazwisko autora": "Clare",
+      "gatunek literacki": "fantasy",
+      "status": "wypo\u017cyczona",
+      "isbn": "9781416972259"
+    },
+    {
+      "tytul": "Miasto popio\u0142\u00f3w",
+      "imie autora": "Cassandra",
+      "nazwisko autora": "Clare",
+      "gatunek literacki": "fantasy",
+      "status": "wypo\u017cyczona",
+      "isbn": "9781406318494"
+    },
+    {
+      "tytul": "\u015awiat\u0142o, kt\u00f3rego nie wida\u0107",
+      "imie autora": "Anthony",
+      "nazwisko autora": "Doerr",
+      "gatunek literacki": "powie\u015b\u0107 historyczna",
+      "status": "dost\u0119pna",
+      "isbn": "9788367176286"
+    },
+    {
+      "tytul": "Fala",
+      "imie autora": "Maria",
+      "nazwisko autora": "Krasowska",
+      "gatunek literacki": "literatura m\u0142odzie\u017cowa",
+      "status": "dost\u0119pna",
+      "isbn": "brak"
+    },
+    {
+      "tytul": "Demon Copperhead",
+      "imie autora": "Barbara",
+      "nazwisko autora": "Kingsolver",
+      "gatunek literacki": "literatura pi\u0119kna",
+      "status": "dost\u0119pna",
+      "isbn": "9788383570174"
+    },
+    {
+      "tytul": "Osada",
+      "imie autora": "Micha\u0142",
+      "nazwisko autora": "\u015amielak",
+      "gatunek literacki": "krymina\u0142",
+      "status": "dost\u0119pna",
+      "isbn": "9788383292786"
+    },
+    {
+      "tytul": "W szponach",
+      "imie autora": "Izabela",
+      "nazwisko autora": "Janiszewska",
+      "gatunek literacki": "krymina\u0142",
+      "status": "dost\u0119pna",
+      "isbn": "9788367891318"
+    },
+    {
+      "tytul": "Polska na wojnie",
+      "imie autora": "Zbigniew",
+      "nazwisko autora": "Parafinowicz",
+      "gatunek literacki": "reporta\u017c",
+      "status": "dost\u0119pna",
+      "isbn": "9788366219908"
+    },
+    {
+      "tytul": "Krew, kt\u00f3ra nas dzieli",
+      "imie autora": "Edyta",
+      "nazwisko autora": "Prusinowska",
+      "gatunek literacki": "literatura m\u0142odzie\u017cowa",
+      "status": "dost\u0119pna",
+      "isbn": "9788381353441"
+    },
+    {
+      "tytul": "Schronisko, kt\u00f3re przesta\u0142o istnie\u0107",
+      "imie autora": "S\u0142awomir",
+      "nazwisko autora": "Gortych",
+      "gatunek literacki": "krymina\u0142",
+      "status": "wypo\u017cyczona",
+      "isbn": "9788327162144"
+    },
+    {
+      "tytul": "Kosiarze",
+      "imie autora": "Neal",
+      "nazwisko autora": "Shusterman",
+      "gatunek literacki": "fantasy",
+      "status": "dost\u0119pna",
+      "isbn": "9788383183756"
+    },
+    {
+      "tytul": "Pomoc domowa",
+      "imie autora": "Freida",
+      "nazwisko autora": "McFadden",
+      "gatunek literacki": "krymina\u0142",
+      "status": "dost\u0119pna",
+      "isbn": "9788367815888"
+    }
+  ]
+}
