@@ -5,36 +5,12 @@ from book import Book
 from library import Library
 
 
-library = Library("Moja Biblioteka", "biblioteka.json", "spisCzytelnikow.json")
+library = Library("Moja Biblioteka", "library.json", "readers.json")
 
 
 def add_a_book_button():
     addABookWindow = AddABookWindow()
     addABookWindow.mainloop()
-
-
-def confirm_adding_book_button():
-    title = AddABookWindow.entry_title.get()
-    name = AddABookWindow.entry_name.get()
-    surname = AddABookWindow.entry_surname.get()
-    genre = AddABookWindow.entry_genre.get()
-    isbn = AddABookWindow.entry_isbn.get()
-    AddABookWindow.results = [title, name, surname, genre, isbn]
-    title = AddABookWindow.results[0]
-
-    nameOfWriter = AddABookWindow.results[1]
-
-    surnameOfWriter = AddABookWindow.results[2]
-
-    literaryGenre = AddABookWindow.results[3]
-
-    isbn = AddABookWindow.results[4]
-
-    newBook = Book(title, nameOfWriter, surnameOfWriter, literaryGenre, isbn)
-    result = library.add_a_book(newBook)
-    windowWithMessage = SimpleWindow("Dodano książkę", result)
-    windowWithMessage.mainloop()
-    # AddABookWindow.destroy()
 
 
 def delete_a_reader_button():
@@ -1072,6 +1048,29 @@ class AddABookWindow(customtkinter.CTk):
         self.geometry("600x360")
         self.title("Dodaj książkę")
         self.results = []
+
+        def confirm_adding_book_button():
+            title = self.entry_title.get()
+            name = self.entry_name.get()
+            surname = self.entry_surname.get()
+            genre = self.entry_genre.get()
+            isbn = self.entry_isbn.get()
+            self.results = [title, name, surname, genre, isbn]
+            title = self.results[0]
+
+            nameOfWriter = self.results[1]
+
+            surnameOfWriter = self.results[2]
+
+            literaryGenre = self.results[3]
+
+            isbn = self.results[4]
+
+            newBook = Book(title, nameOfWriter, surnameOfWriter, literaryGenre, isbn)
+            result = library.add_a_book(newBook)
+            windowWithMessage = SimpleWindow("Dodano książkę", result)
+            windowWithMessage.mainloop()
+            # AddABookWindow.destroy()
 
         self.label = customtkinter.CTkLabel(
             self,
