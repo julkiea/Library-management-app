@@ -5,7 +5,7 @@ from book import Book
 from library import Library
 
 
-library = Library("Moja Biblioteka", "biblioteka.json", "spisCzytelnikow.json")
+library = Library("Moja Biblioteka", "library.json", "readers.json")
 
 
 def add_a_book_button():
