@@ -18,30 +18,9 @@ def delete_a_reader_button():
     deleteAReaderWindow.mainloop()
 
 
-def confirm_deleting_reader_button():
-    nameOfReader = DeleteAReaderWindow.entry_name.get()
-    surnameOfReader = DeleteAReaderWindow.entry_surname.get()
-    numberOfReader = DeleteAReaderWindow.entry_number.get()
-
-    result = library.delete_a_reader(nameOfReader, surnameOfReader, numberOfReader)
-    windowWithMessage = SimpleWindow("Informacja o usunięciu czytelnika", result)
-    windowWithMessage.mainloop()
-
-
 def delete_a_book_button():
     deleteABookWindow = DeleteABookWindow()
     deleteABookWindow.mainloop()
-
-
-def confirm_deleting_book_button():
-    title = DeleteABookWindow.entry_title.get()
-    name = DeleteABookWindow.entry_name.get()
-    surname = DeleteABookWindow.entry_surname.get()
-    isbn = DeleteABookWindow.entry_isbn.get()
-
-    result = library.delete_a_book(title, name, surname, isbn)
-    windowWithMessage = SimpleWindow("Informacja o usuwaniu książki", result)
-    windowWithMessage.mainloop()
 
 
 def return_a_book():
@@ -49,35 +28,9 @@ def return_a_book():
     returnABookWindow.mainloop()
 
 
-def confirm_returning_a_book_button():
-    title = ReturnABookWindow.entry_title.get()
-    nameOfWriter = ReturnABookWindow.entry_nameOfWriter.get()
-    surnameOfWriter = ReturnABookWindow.entry_surnameOfWriter.get()
-    nameOfReader = ReturnABookWindow.entry_nameOfReader.get()
-    surnameOfReader = ReturnABookWindow.entry_surnameOfWriter.get()
-    result = library.return_a_book(
-        nameOfReader, surnameOfReader, title, nameOfWriter, surnameOfWriter
-    )
-    windowWithMessage = SimpleWindow("Informacja o oddaniu", result)
-    windowWithMessage.mainloop()
-
-
 def borrow_a_book_button():
     borrowABookWindow = BorrowABookWindow()
     borrowABookWindow.mainloop()
-
-
-def confirm_borrowing_a_book_button():
-    title = BorrowABookWindow.entry_title.get()
-    nameOfWriter = BorrowABookWindow.entry_nameOfWriter.get()
-    surnameOfWriter = BorrowABookWindow.entry_surnameOfWriter.get()
-    nameOfReader = BorrowABookWindow.entry_nameOfReader.get()
-    surnameOfReader = BorrowABookWindow.entry_surnameOfReader.get()
-    result = library.borrow_a_book(
-        nameOfReader, surnameOfReader, title, nameOfWriter, surnameOfWriter
-    )
-    windowWithMessage = SimpleWindow("Informacja o wypożyczaniu", result)
-    windowWithMessage.mainloop()
 
 
 def add_a_reader_button():
@@ -85,245 +38,14 @@ def add_a_reader_button():
     addAReaderWindow.mainloop()
 
 
-def confirm_adding_a_reader_button():
-    nameOfReader = AddAReaderWindow.entry_nameOfReader.get()
-    surnameOfReader = AddAReaderWindow.entry_surnameOfReader.get()
-    numberOfReader = AddAReaderWindow.entry_numberOfReader.get()
-
-    newReader = Reader(nameOfReader, surnameOfReader, numberOfReader)
-    result = library.add_a_reader(newReader)
-    windowWithMessage = SimpleWindow("Dodano czytelnika", result)
-    windowWithMessage.mainloop()
-
-
 def find_a_reader_button():
     findAReaderWindow = FindAReaderWindow()
     findAReaderWindow.mainloop()
 
 
-def confirm_looking_for_reader():
-    nameOfReader = FindAReaderWindow.entry_nameOfReader.get()
-    surnameOfReader = FindAReaderWindow.entry_surnameOfReader.get()
-    result = library.find_a_reader(nameOfReader, surnameOfReader)
-    readers = []
-    if len(result) == 0:
-        windowWithMessage = SimpleWindow(
-            "Nie znaleziono czytelnika", "Nie znaleziono czytelnika"
-        )
-        windowWithMessage.mainloop()
-    else:
-        for czytelnik in result:
-            wypozyczoneKsiazki = czytelnik["wypozyczone ksiazki"]
-            oddaneKsiazki = czytelnik["oddane ksiazki"]
-
-            tekst_czytelnik = (
-                "Znaleziono czytelnika: \n Imię: "
-                + czytelnik["imię czytelnika"]
-                + "\n Nazwisko: "
-                + czytelnik["nazwisko czytelnika"]
-                + "\n Numer: "
-                + czytelnik["numer czytelnika"]
-            )
-            if wypozyczoneKsiazki:
-                for ksiazka in wypozyczoneKsiazki:
-                    tekst_czytelnik += (
-                        "\nWypożyczone książki: "
-                        "\n - Tytuł: "
-                        + ksiazka["tytul"]
-                        + ", \nAutor: "
-                        + ksiazka["imie autora"]
-                        + " "
-                        + ksiazka["nazwisko autora"]
-                    )
-            if oddaneKsiazki:
-                for ksiazka in oddaneKsiazki:
-                    tekst_czytelnik += (
-                        "\nOddane książki: "
-                        "\n - Tytuł: "
-                        + ksiazka["tytul"]
-                        + ", \nAutor: "
-                        + ksiazka["imie autora"]
-                        + " "
-                        + ksiazka["nazwisko autora"]
-                    )
-            readers.append(tekst_czytelnik)
-        windowWithScrollableLabels = WindowWithScrollableLabels(
-            "Znalezieni czytelnicy", readers
-        )
-        windowWithScrollableLabels.mainloop()
-
-
 def find_a_book_button():
     findABookWindow = FindABookWindow()
     findABookWindow.mainloop()
-
-
-def confirm_looking_for_book_with_title_button():
-    title = FindABookWindow.entry_title.get()
-    result = library.find_a_book_with_title(title)
-    books = []
-    if len(result) == 0:
-        windowWithMessage = SimpleWindow(
-            "Nie znaleziono książki",
-            "Nie znaleziono książki \n o podanym tytule",
-        )
-        windowWithMessage.mainloop()
-    else:
-        for book in result:
-            text = (
-                "Znaleziono książkę: \n Tytuł: "
-                + book["tytul"]
-                + "\n Autor: "
-                + book["imie autora"]
-                + " "
-                + book["nazwisko autora"]
-                + "\n Status: "
-                + book["status"]
-                + "\n Gatunek literacki: "
-                + book["gatunek literacki"]
-                + "\n Isbn: "
-                + book["isbn"]
-            )
-            books.append(text)
-        windowWithScrollableLabels = WindowWithScrollableLabels(
-            "Znalezione książki", books
-        )
-        windowWithScrollableLabels.mainloop()
-
-
-def confirm_looking_for_book_with_genre_button():
-    genre = FindABookWindow.entry_genre.get()
-    result = library.find_a_book_with_genre(genre)
-    books = []
-    if len(result) == 0:
-        windowWithMessage = SimpleWindow(
-            "Nie znaleziono książki",
-            "Nie znaleziono książki \n o podanym gatunku literackim",
-        )
-        windowWithMessage.mainloop()
-    else:
-        for book in result:
-            text = (
-                "Znaleziono książkę: \n Tytuł: "
-                + book["tytul"]
-                + "\n Autor: "
-                + book["imie autora"]
-                + " "
-                + book["nazwisko autora"]
-                + "\n Status: "
-                + book["status"]
-                + "\n Gatunek literacki: "
-                + book["gatunek literacki"]
-                + "\n Isbn: "
-                + book["isbn"]
-            )
-            books.append(text)
-        windowWithScrollableLabels = WindowWithScrollableLabels(
-            "Znalezione książki", books
-        )
-        windowWithScrollableLabels.mainloop()
-
-
-def confirm_looking_for_book_with_isbn_button():
-    isbn = FindABookWindow.entry_isbn.get()
-    result = library.find_a_book_with_isbn(isbn)
-    books = []
-    if len(result) == 0:
-        windowWithMessage = SimpleWindow(
-            "Nie znaleziono książki",
-            "Nie znaleziono książki \n o podanym isbn",
-        )
-        windowWithMessage.mainloop()
-    else:
-        for book in result:
-            text = (
-                "Znaleziono książkę: \n Tytuł: "
-                + book["tytul"]
-                + "\n Autor: "
-                + book["imie autora"]
-                + " "
-                + book["nazwisko autora"]
-                + "\n Status: "
-                + book["status"]
-                + "\n Gatunek literacki: "
-                + book["gatunek literacki"]
-                + "\n Isbn: "
-                + book["isbn"]
-            )
-            books.append(text)
-        windowWithScrollableLabels = WindowWithScrollableLabels(
-            "Znalezione książki", books
-        )
-        windowWithScrollableLabels.mainloop()
-
-
-def confirm_looking_for_book_with_writer_button():
-    name = FindABookWindow.entry_nameOfWriter.get()
-    surname = FindABookWindow.entry_surnameOfWriter.get()
-    result = library.find_a_book_of_writer(name, surname)
-    books = []
-    if len(result) == 0:
-        windowWithMessage = SimpleWindow(
-            "Nie znaleziono książki",
-            "Nie znaleziono książki \n podanego autora",
-        )
-        windowWithMessage.mainloop()
-    else:
-        for book in result:
-            text = (
-                "Znaleziono książkę: \n Tytuł: "
-                + book["tytul"]
-                + "\n Autor: "
-                + book["imie autora"]
-                + " "
-                + book["nazwisko autora"]
-                + "\n Status: "
-                + book["status"]
-                + "\n Gatunek literacki: "
-                + book["gatunek literacki"]
-                + "\n Isbn: "
-                + book["isbn"]
-            )
-            books.append(text)
-        windowWithScrollableLabels = WindowWithScrollableLabels(
-            "Znalezione książki", books
-        )
-        windowWithScrollableLabels.mainloop()
-
-
-def confirm_looking_for_book_with_writer_and_title_button():
-    title = FindABookWindow.entry_title2.get()
-    name = FindABookWindow.entry_nameOfWriter2.get()
-    surname = FindABookWindow.entry_surnameOfWriter2.get()
-    result = library.find_a_book_with_writer_and_title(title, name, surname)
-    books = []
-    if len(result) == 0:
-        windowWithMessage = SimpleWindow(
-            "Nie znaleziono książki",
-            "Nie znaleziono książki \n o podanym tytule \n podanego autora",
-        )
-        windowWithMessage.mainloop()
-    else:
-        for book in result:
-            text = (
-                "Znaleziono książkę: \n Tytuł: "
-                + book["tytul"]
-                + "\n Autor: "
-                + book["imie autora"]
-                + " "
-                + book["nazwisko autora"]
-                + "\n Status: "
-                + book["status"]
-                + "\n Gatunek literacki: "
-                + book["gatunek literacki"]
-                + "\n Isbn: "
-                + book["isbn"]
-            )
-            books.append(text)
-        windowWithScrollableLabels = WindowWithScrollableLabels(
-            "Znalezione książki", books
-        )
-        windowWithScrollableLabels.mainloop()
 
 
 def count_books_in_library_button():
@@ -349,6 +71,18 @@ class ReturnABookWindow(customtkinter.CTk):
         super().__init__()
         self.geometry("600x300")
         self.title("Oddaj książkę")
+
+        def confirm_returning_a_book_button():
+            title = self.entry_title.get()
+            nameOfWriter = self.entry_nameOfWriter.get()
+            surnameOfWriter = self.entry_surnameOfWriter.get()
+            nameOfReader = self.entry_nameOfReader.get()
+            surnameOfReader = self.entry_surnameOfWriter.get()
+            result = library.return_a_book(
+                nameOfReader, surnameOfReader, title, nameOfWriter, surnameOfWriter
+            )
+            windowWithMessage = SimpleWindow("Informacja o oddaniu", result)
+            windowWithMessage.mainloop()
 
         self.label_title = customtkinter.CTkLabel(
             self,
@@ -449,6 +183,18 @@ class BorrowABookWindow(customtkinter.CTk):
         self.geometry("600x300")
         self.title("Wypożycz książkę")
 
+        def confirm_borrowing_a_book_button():
+            title = self.entry_title.get()
+            nameOfWriter = self.entry_nameOfWriter.get()
+            surnameOfWriter = self.entry_surnameOfWriter.get()
+            nameOfReader = self.entry_nameOfReader.get()
+            surnameOfReader = self.entry_surnameOfReader.get()
+            result = library.borrow_a_book(
+                nameOfReader, surnameOfReader, title, nameOfWriter, surnameOfWriter
+            )
+            windowWithMessage = SimpleWindow("Informacja o wypożyczaniu", result)
+            windowWithMessage.mainloop()
+
         self.label_title = customtkinter.CTkLabel(
             self,
             text="Podaj tytuł książki: ",
@@ -547,6 +293,169 @@ class FindABookWindow(customtkinter.CTk):
         super().__init__()
         self.geometry("600x650")
         self.title("Wyszukaj książkę")
+
+        def confirm_looking_for_book_with_title_button():
+            title = self.entry_title.get()
+            result = library.find_a_book_with_title(title)
+            books = []
+            if len(result) == 0:
+                windowWithMessage = SimpleWindow(
+                    "Nie znaleziono książki",
+                    "Nie znaleziono książki \n o podanym tytule",
+                )
+                windowWithMessage.mainloop()
+            else:
+                for book in result:
+                    text = (
+                        "Znaleziono książkę: \n Tytuł: "
+                        + book["tytul"]
+                        + "\n Autor: "
+                        + book["imie autora"]
+                        + " "
+                        + book["nazwisko autora"]
+                        + "\n Status: "
+                        + book["status"]
+                        + "\n Gatunek literacki: "
+                        + book["gatunek literacki"]
+                        + "\n Isbn: "
+                        + book["isbn"]
+                    )
+                    books.append(text)
+                windowWithScrollableLabels = WindowWithScrollableLabels(
+                    "Znalezione książki", books
+                )
+                windowWithScrollableLabels.mainloop()
+
+        def confirm_looking_for_book_with_genre_button():
+            genre = self.entry_genre.get()
+            result = library.find_a_book_with_genre(genre)
+            books = []
+            if len(result) == 0:
+                windowWithMessage = SimpleWindow(
+                    "Nie znaleziono książki",
+                    "Nie znaleziono książki \n o podanym gatunku literackim",
+                )
+                windowWithMessage.mainloop()
+            else:
+                for book in result:
+                    text = (
+                        "Znaleziono książkę: \n Tytuł: "
+                        + book["tytul"]
+                        + "\n Autor: "
+                        + book["imie autora"]
+                        + " "
+                        + book["nazwisko autora"]
+                        + "\n Status: "
+                        + book["status"]
+                        + "\n Gatunek literacki: "
+                        + book["gatunek literacki"]
+                        + "\n Isbn: "
+                        + book["isbn"]
+                    )
+                    books.append(text)
+                windowWithScrollableLabels = WindowWithScrollableLabels(
+                    "Znalezione książki", books
+                )
+                windowWithScrollableLabels.mainloop()
+
+        def confirm_looking_for_book_with_isbn_button():
+            isbn = self.entry_isbn.get()
+            result = library.find_a_book_with_isbn(isbn)
+            books = []
+            if len(result) == 0:
+                windowWithMessage = SimpleWindow(
+                    "Nie znaleziono książki",
+                    "Nie znaleziono książki \n o podanym isbn",
+                )
+                windowWithMessage.mainloop()
+            else:
+                for book in result:
+                    text = (
+                        "Znaleziono książkę: \n Tytuł: "
+                        + book["tytul"]
+                        + "\n Autor: "
+                        + book["imie autora"]
+                        + " "
+                        + book["nazwisko autora"]
+                        + "\n Status: "
+                        + book["status"]
+                        + "\n Gatunek literacki: "
+                        + book["gatunek literacki"]
+                        + "\n Isbn: "
+                        + book["isbn"]
+                    )
+                    books.append(text)
+                windowWithScrollableLabels = WindowWithScrollableLabels(
+                    "Znalezione książki", books
+                )
+                windowWithScrollableLabels.mainloop()
+
+        def confirm_looking_for_book_with_writer_button():
+            name = self.entry_nameOfWriter.get()
+            surname = self.entry_surnameOfWriter.get()
+            result = library.find_a_book_of_writer(name, surname)
+            books = []
+            if len(result) == 0:
+                windowWithMessage = SimpleWindow(
+                    "Nie znaleziono książki",
+                    "Nie znaleziono książki \n podanego autora",
+                )
+                windowWithMessage.mainloop()
+            else:
+                for book in result:
+                    text = (
+                        "Znaleziono książkę: \n Tytuł: "
+                        + book["tytul"]
+                        + "\n Autor: "
+                        + book["imie autora"]
+                        + " "
+                        + book["nazwisko autora"]
+                        + "\n Status: "
+                        + book["status"]
+                        + "\n Gatunek literacki: "
+                        + book["gatunek literacki"]
+                        + "\n Isbn: "
+                        + book["isbn"]
+                    )
+                    books.append(text)
+                windowWithScrollableLabels = WindowWithScrollableLabels(
+                    "Znalezione książki", books
+                )
+                windowWithScrollableLabels.mainloop()
+
+        def confirm_looking_for_book_with_writer_and_title_button():
+            title = self.entry_title2.get()
+            name = self.entry_nameOfWriter2.get()
+            surname = self.entry_surnameOfWriter2.get()
+            result = library.find_a_book_with_writer_and_title(title, name, surname)
+            books = []
+            if len(result) == 0:
+                windowWithMessage = SimpleWindow(
+                    "Nie znaleziono książki",
+                    "Nie znaleziono książki \n o podanym tytule \n podanego autora",
+                )
+                windowWithMessage.mainloop()
+            else:
+                for book in result:
+                    text = (
+                        "Znaleziono książkę: \n Tytuł: "
+                        + book["tytul"]
+                        + "\n Autor: "
+                        + book["imie autora"]
+                        + " "
+                        + book["nazwisko autora"]
+                        + "\n Status: "
+                        + book["status"]
+                        + "\n Gatunek literacki: "
+                        + book["gatunek literacki"]
+                        + "\n Isbn: "
+                        + book["isbn"]
+                    )
+                    books.append(text)
+                windowWithScrollableLabels = WindowWithScrollableLabels(
+                    "Znalezione książki", books
+                )
+                windowWithScrollableLabels.mainloop()
 
         self.label_title = customtkinter.CTkLabel(
             self,
@@ -779,6 +688,57 @@ class FindAReaderWindow(customtkinter.CTk):
         self.title("Wyszukaj czytelnika")
         self.results = []
 
+        def confirm_looking_for_reader():
+            nameOfReader = self.entry_nameOfReader.get()
+            surnameOfReader = self.entry_surnameOfReader.get()
+            result = library.find_a_reader(nameOfReader, surnameOfReader)
+            readers = []
+            if len(result) == 0:
+                windowWithMessage = SimpleWindow(
+                    "Nie znaleziono czytelnika", "Nie znaleziono czytelnika"
+                )
+                windowWithMessage.mainloop()
+            else:
+                for czytelnik in result:
+                    wypozyczoneKsiazki = czytelnik["wypozyczone ksiazki"]
+                    oddaneKsiazki = czytelnik["oddane ksiazki"]
+
+                    tekst_czytelnik = (
+                        "Znaleziono czytelnika: \n Imię: "
+                        + czytelnik["imię czytelnika"]
+                        + "\n Nazwisko: "
+                        + czytelnik["nazwisko czytelnika"]
+                        + "\n Numer: "
+                        + czytelnik["numer czytelnika"]
+                    )
+                    if wypozyczoneKsiazki:
+                        for ksiazka in wypozyczoneKsiazki:
+                            tekst_czytelnik += (
+                                "\nWypożyczone książki: "
+                                "\n - Tytuł: "
+                                + ksiazka["tytul"]
+                                + ", \nAutor: "
+                                + ksiazka["imie autora"]
+                                + " "
+                                + ksiazka["nazwisko autora"]
+                            )
+                    if oddaneKsiazki:
+                        for ksiazka in oddaneKsiazki:
+                            tekst_czytelnik += (
+                                "\nOddane książki: "
+                                "\n - Tytuł: "
+                                + ksiazka["tytul"]
+                                + ", \nAutor: "
+                                + ksiazka["imie autora"]
+                                + " "
+                                + ksiazka["nazwisko autora"]
+                            )
+                    readers.append(tekst_czytelnik)
+                windowWithScrollableLabels = WindowWithScrollableLabels(
+                    "Znalezieni czytelnicy", readers
+                )
+                windowWithScrollableLabels.mainloop()
+
         self.label = customtkinter.CTkLabel(
             self,
             text="Podaj imie czytelnika:",
@@ -830,6 +790,16 @@ class AddAReaderWindow(customtkinter.CTk):
         self.geometry("600x250")
         self.title("Dodaj czytelnika")
         self.results = []
+
+        def confirm_adding_a_reader_button():
+            nameOfReader = self.entry_nameOfReader.get()
+            surnameOfReader = self.entry_surnameOfReader.get()
+            numberOfReader = self.entry_numberOfReader.get()
+
+            newReader = Reader(nameOfReader, surnameOfReader, numberOfReader)
+            result = library.add_a_reader(newReader)
+            windowWithMessage = SimpleWindow("Dodano czytelnika", result)
+            windowWithMessage.mainloop()
 
         self.label = customtkinter.CTkLabel(
             self,
@@ -904,6 +874,19 @@ class DeleteAReaderWindow(customtkinter.CTk):
         self.title("Usuń czytelnika")
         self.results = []
 
+        def confirm_deleting_reader_button():
+            nameOfReader = self.entry_name.get()
+            surnameOfReader = self.entry_surname.get()
+            numberOfReader = self.entry_number.get()
+
+            result = library.delete_a_reader(
+                nameOfReader, surnameOfReader, numberOfReader
+            )
+            windowWithMessage = SimpleWindow(
+                "Informacja o usunięciu czytelnika", result
+            )
+            windowWithMessage.mainloop()
+
         self.label = customtkinter.CTkLabel(
             self,
             text="Podaj imie czytelnika:",
@@ -968,6 +951,16 @@ class DeleteABookWindow(customtkinter.CTk):
         self.geometry("600x300")
         self.title("Usuń książkę")
         self.results = []
+
+        def confirm_deleting_book_button():
+            title = self.entry_title.get()
+            name = self.entry_name.get()
+            surname = self.entry_surname.get()
+            isbn = self.entry_isbn.get()
+
+            result = library.delete_a_book(title, name, surname, isbn)
+            windowWithMessage = SimpleWindow("Informacja o usuwaniu książki", result)
+            windowWithMessage.mainloop()
 
         self.label = customtkinter.CTkLabel(
             self,
