@@ -131,13 +131,6 @@
       ]
     },
     {
-      "imi\u0119 czytelnika": "Adam",
-      "nazwisko czytelnika": "Bassa",
-      "numer czytelnika": "13",
-      "wypozyczone ksiazki": [],
-      "oddane ksiazki": []
-    },
-    {
       "imi\u0119 czytelnika": "Katarzyna",
       "nazwisko czytelnika": "Czerwiec",
       "numer czytelnika": "14",
@@ -172,6 +165,22 @@
       "nazwisko czytelnika": "Kowalska",
       "numer czytelnika": "17",
       "wypozyczone ksiazki": [],
+      "oddane ksiazki": []
+    },
+    {
+      "imi\u0119 czytelnika": "Teresa",
+      "nazwisko czytelnika": "Czerwiec",
+      "numer czytelnika": "18",
+      "wypozyczone ksiazki": [
+        {
+          "tytul": "Ba\u015bniowa opowie\u015b\u0107",
+          "imie autora": "Stephen",
+          "nazwisko autora": "King",
+          "gatunek literacki": "fantasy",
+          "status": "wypo\u017cyczona",
+          "isbn": "9788367338189"
+        }
+      ],
       "oddane ksiazki": []
     }
   ]
