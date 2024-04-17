@@ -21,7 +21,7 @@
       "imie autora": "Stephen",
       "nazwisko autora": "King",
       "gatunek literacki": "fantasy",
-      "status": "dost\u0119pna",
+      "status": "wypo\u017cyczona",
       "isbn": "9788367338189"
     },
     {
@@ -65,19 +65,11 @@
       "isbn": "9781416955078"
     },
     {
-      "tytul": "Miasto upad\u0142ych anio\u0142\u00f3w",
-      "imie autora": "Cassandra",
-      "nazwisko autora": "Clare",
-      "gatunek literacki": "fantasy",
-      "status": "dost\u0119pna",
-      "isbn": "9781406328677"
-    },
-    {
       "tytul": "Miasto szk\u0142a",
       "imie autora": "Cassandra",
       "nazwisko autora": "Clare",
       "gatunek literacki": "fantasy",
-      "status": "wypo\u017cyczona",
+      "status": "dost\u0119pna",
       "isbn": "9781416972259"
     },
     {
@@ -149,7 +141,7 @@
       "imie autora": "S\u0142awomir",
       "nazwisko autora": "Gortych",
       "gatunek literacki": "krymina\u0142",
-      "status": "wypo\u017cyczona",
+      "status": "dost\u0119pna",
       "isbn": "9788327162144"
     },
     {
@@ -167,22 +159,6 @@
       "gatunek literacki": "krymina\u0142",
       "status": "dost\u0119pna",
       "isbn": "9788367815888"
-    },
-    {
-      "tytul": "ANna",
-      "imie autora": "Ndajsd",
-      "nazwisko autora": "jsdj",
-      "gatunek literacki": "asdjk",
-      "status": "dost\u0119pna",
-      "isbn": "sdjs"
-    },
-    {
-      "tytul": "VB",
-      "imie autora": "FGHJ",
-      "nazwisko autora": "FGHJ",
-      "gatunek literacki": "FGHJ",
-      "status": "dost\u0119pna",
-      "isbn": "FGH"
     }
   ]
 }
